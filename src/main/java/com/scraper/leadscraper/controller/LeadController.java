@@ -17,7 +17,7 @@ public class LeadController {
         this.scraperService = scraperService;
     }
 
-    @GetMapping("/api/leadsssss")
+    @GetMapping("/api/lead")
     public List<Place> getLeads(@RequestParam(defaultValue = "family restaurants in Peoria IL") String query) {
         return scraperService.getLeadsWithoutWebsite(query);
     }
