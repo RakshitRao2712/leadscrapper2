@@ -13,6 +13,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.List;
 
+//comment
 @Service
 public class ScraperService {
 
@@ -53,11 +54,13 @@ public class ScraperService {
             if (placeResponse.places() == null)
                 return List.of();
 
-            // Stream and filter for missing websites, operational status, and recently added (proxy: low review count)
+            // Stream and filter for missing websites, operational status, and recently
+            // added (proxy: low review count)
             return placeResponse.places().stream()
                     .filter(place -> place.websiteUri() == null || place.websiteUri().isEmpty())
                     .filter(place -> "OPERATIONAL".equals(place.businessStatus()))
-                    .filter(place -> place.userRatingCount() == null || place.userRatingCount() <= maxReviewsForNewBusiness)
+                    .filter(place -> place.userRatingCount() == null
+                            || place.userRatingCount() <= maxReviewsForNewBusiness)
                     .toList();
 
         } catch (Exception e) {
