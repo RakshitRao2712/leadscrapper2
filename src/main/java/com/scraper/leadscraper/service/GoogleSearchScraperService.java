@@ -2,427 +2,336 @@ package com.scraper.leadscraper.service;
 
 import com.scraper.leadscraper.dto.GoogleSearchLead;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import jakarta.annotation.PreDestroy;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.net.URI;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Service that:
- * 1. Searches Google for a given category/query using Selenium
- * 2. Collects organic result URLs
- * 3. Visits each website and checks for copyright © 2023 or © 2024
- * 4. Extracts phone numbers from matching websites
- */
 @Service
 public class GoogleSearchScraperService {
-
     private static final Logger log = LoggerFactory.getLogger(GoogleSearchScraperService.class);
+    private static final String USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
+            "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
+    // Use the final year of a range, not its start. Require a complete four-digit year.
+    private static final Pattern COPYRIGHT = Pattern.compile(
+            "(?:©|\\(c\\)|copyright)\\s*(?:©\\s*)?(?:(?:19|20)\\d{2}\\s*[-–—/]\\s*)?((?:19|20)\\d{2})(?:\\s*[-–—/]\\s*(\\d{2}))?(?!\\d)",
+            Pattern.CASE_INSENSITIVE);
+    private static final Pattern PHONE = Pattern.compile(
+            "(?<![\\p{L}\\d])\\+?\\d[\\d(). \\u00a0-]{5,25}\\d(?![\\p{L}\\d])");
+    private static final Pattern JSON_PHONE = Pattern.compile(
+            "\"telephone\"\\s*:\\s*\"([^\"]+)\"", Pattern.CASE_INSENSITIVE);
+    private static final Set<String> EXCLUDED = Set.of(
+            "google.com", "googleapis.com", "gstatic.com", "youtube.com", "googleusercontent.com",
+            "yelp.com", "tripadvisor.com", "opentable.com", "doordash.com", "grubhub.com",
+            "ubereats.com", "facebook.com", "instagram.com", "foursquare.com", "eater.com",
+            "theinfatuation.com", "wikipedia.org", "timeout.com", "thrillist.com", "michelin.com",
+            "resy.com", "yellowpages.com", "menupix.com", "seamless.com");
 
-    // Regex patterns for copyright detection — matches "© 2023", "Copyright 2024", etc.
-    private static final Pattern COPYRIGHT_PATTERN = Pattern.compile(
-            "(?:©|&copy;|\\(c\\)|copyright)\\s*(?:20)?(?:23|24)",
-            Pattern.CASE_INSENSITIVE
-    );
+    private final int maxResults;
+    private final Duration timeout;
+    private final HttpClient client;
+    private final ExecutorService workers;
+    // One browser search at a time across requests; website work uses the shared bounded pool.
+    private final Semaphore browserSlot = new Semaphore(1);
 
-    // Regex to extract the specific year from the copyright notice
-    private static final Pattern COPYRIGHT_YEAR_PATTERN = Pattern.compile(
-            "(?:©|&copy;|\\(c\\)|copyright)\\s*(20(?:23|24))",
-            Pattern.CASE_INSENSITIVE
-    );
+    public GoogleSearchScraperService(
+            @Value("${google.search.max.results:20}") int maxResults,
+            @Value("${google.search.page.timeout:10}") int timeoutSeconds,
+            @Value("${google.search.concurrency:8}") int concurrency) {
+        if (maxResults < 1 || maxResults > 200 || timeoutSeconds < 1 || timeoutSeconds > 60
+                || concurrency < 1 || concurrency > 32) {
+            throw new IllegalArgumentException("Invalid Google search limits (results 1–200, timeout 1–60, concurrency 1–32)");
+        }
+        this.maxResults = maxResults;
+        this.timeout = Duration.ofSeconds(timeoutSeconds);
+        this.client = HttpClient.newBuilder().connectTimeout(timeout)
+                .followRedirects(HttpClient.Redirect.NORMAL).build();
+        this.workers = new ThreadPoolExecutor(concurrency, concurrency, 0, TimeUnit.MILLISECONDS,
+                new ArrayBlockingQueue<>(200), new ThreadPoolExecutor.AbortPolicy());
+    }
 
-    // Common phone number patterns (US, UK, international)
-    private static final Pattern PHONE_PATTERN = Pattern.compile(
-            "(?:\\+?1[-.\\s]?)?\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4}" +    // US: (555) 123-4567
-            "|\\+?\\d{1,4}[-.\\s]?\\(?\\d{1,4}\\)?[-.\\s]?\\d{2,4}[-.\\s]?\\d{2,4}[-.\\s]?\\d{0,4}" + // International
-            "|\\d{5}[-.\\s]?\\d{5,6}"  // Generic 10-11 digit numbers
-    );
+    @PreDestroy
+    public void close() {
+        workers.shutdownNow();
+        client.close();
+    }
 
-    // Phone href pattern for "tel:" links
-    private static final Pattern TEL_HREF_PATTERN = Pattern.compile(
-            "tel:([+\\d\\-().\\s]+)"
-    );
-
-    @Value("${google.search.max.results:20}")
-    private int maxResults;
-
-    @Value("${google.search.page.timeout:10}")
-    private int pageTimeoutSeconds;
-
-    /**
-     * Searches Google for the given query, collects result URLs, visits each site,
-     * checks for copyright 2023/2024, and extracts phone numbers from matching sites.
-     *
-     * @param query   The search query, e.g. "plumbers in Chicago"
-     * @param pages   Number of Google result pages to scrape (default 1)
-     * @return List of leads with outdated copyrights and phone numbers
-     */
     public List<GoogleSearchLead> searchAndExtractLeads(String query, int pages) {
-        log.info("Starting Google search scrape for query: '{}', pages: {}", query, pages);
-
-        // Step 1: Get URLs from Google search results using Selenium
-        List<GoogleSearchResult> searchResults = scrapeGoogleSearchResults(query, pages);
-        log.info("Found {} search results from Google", searchResults.size());
-
-        // Step 2: Visit each URL and check for copyright + extract phone numbers
-        List<GoogleSearchLead> leads = new ArrayList<>();
-
-        HttpClient httpClient = HttpClient.newBuilder()
-                .followRedirects(HttpClient.Redirect.NORMAL)
-                .connectTimeout(Duration.ofSeconds(pageTimeoutSeconds))
-                .build();
-
-        for (GoogleSearchResult result : searchResults) {
-            try {
-                GoogleSearchLead lead = processWebsite(httpClient, result);
-                if (lead != null) {
-                    leads.add(lead);
-                    log.info("✓ Lead found: {} — {} phone(s), copyright {}",
-                            lead.websiteUrl(), lead.phoneNumbers().size(), lead.copyrightYear());
-                }
-            } catch (Exception e) {
-                log.warn("Error processing {}: {}", result.url(), e.getMessage());
-            }
+        if (query == null || query.isBlank() || query.length() > 500 || pages < 1 || pages > 10) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Supply a query of 1–500 characters and pages between 1 and 10");
         }
-
-        log.info("Finished processing. Found {} leads with outdated copyright + phone numbers", leads.size());
-        return leads;
-    }
-
-    /**
-     * Uses Selenium with headless Chrome to scrape Google search results.
-     */
-    private List<GoogleSearchResult> scrapeGoogleSearchResults(String query, int pages) {
-        WebDriverManager.chromedriver().setup();
-
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--window-size=1920,1080");
-        options.setPageLoadStrategy(org.openqa.selenium.PageLoadStrategy.EAGER);
-        options.addArguments("--blink-settings=imagesEnabled=false");
-        options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
-                "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
-        // Disable automation flags to reduce bot detection
-        options.addArguments("--disable-blink-features=AutomationControlled");
-        options.setExperimentalOption("excludeSwitches", List.of("enable-automation"));
-
-        WebDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
-
-        Set<GoogleSearchResult> results = new LinkedHashSet<>();
-
+        long started = System.nanoTime();
+        List<GoogleSearchResult> results = scrapeGoogleSearchResults(query.trim(), pages);
+        List<Future<GoogleSearchLead>> tasks = new ArrayList<>();
         try {
-            for (int page = 0; page < pages; page++) {
-                String searchUrl = buildGoogleSearchUrl(query, page * 10);
-                log.info("Fetching Google results page {} — URL: {}", page + 1, searchUrl);
-
-                try {
-                    driver.get(searchUrl);
-                } catch (org.openqa.selenium.TimeoutException e) {
-                    log.warn("Page load timed out on {}, proceeding with available DOM", searchUrl);
-                }
-
-                // Small delay to let the page settle
-                Thread.sleep(1500);
-
-                // Handle cookie consent dialog if present
-                try {
-                    List<WebElement> consentButtons = driver.findElements(By.xpath(
-                            "//button[contains(.,'Accept all') or contains(.,'I agree') or @id='L2AGLb']"));
-                    if (!consentButtons.isEmpty()) {
-                        consentButtons.get(0).click();
-                        Thread.sleep(1000);
-                    }
-                } catch (Exception ignored) {
-                }
-
-                // Extract all external links from Google search results (organic, local pack, knowledge panel)
-                List<WebElement> allLinks = driver.findElements(By.cssSelector("a[href]"));
-                List<WebElement> candidateElements = new ArrayList<>();
-                for (WebElement a : allLinks) {
-                    try {
-                        String href = a.getAttribute("href");
-                        if (href != null && href.startsWith("http") && !isGoogleUrl(href) && !isDirectoryDomain(href)) {
-                            candidateElements.add(a);
-                        }
-                    } catch (Exception ignored) {
-                    }
-                }
-                log.info("Found {} external candidate links on Google page {}", candidateElements.size(), page + 1);
-
-                for (WebElement element : candidateElements) {
-                    try {
-                        String href = element.getAttribute("href");
-                        if (href == null || !href.startsWith("http") || isGoogleUrl(href) || isDirectoryDomain(href)) {
-                            continue;
-                        }
-
-                        // Try to extract title/heading
-                        String title = "";
-                        try {
-                            WebElement heading = element.findElement(By.xpath(".//h3"));
-                            title = heading.getText();
-                        } catch (Exception ignored) {
-                            title = element.getText();
-                        }
-
-                        // Get the snippet from the parent container
-                        String snippet = "";
-                        try {
-                            WebElement parent = element.findElement(By.xpath("./ancestor::div[contains(@class,'g')]"));
-                            snippet = parent.getText();
-                        } catch (Exception ignored) {
-                        }
-
-                        if (!title.isBlank()) {
-                            results.add(new GoogleSearchResult(href, title.trim(), snippet.trim()));
-                        }
-                    } catch (Exception e) {
-                        log.debug("Error extracting result element: {}", e.getMessage());
-                    }
-                }
-
-                if (results.size() >= maxResults) {
-                    break;
-                }
-
-                // Delay between pages to avoid being blocked
-                if (page < pages - 1) {
-                    Thread.sleep(3000 + (long) (Math.random() * 2000));
-                }
+            for (GoogleSearchResult result : results) {
+                tasks.add(workers.submit(() -> processWebsite(result)));
             }
-        } catch (Exception e) {
-            log.error("Error scraping Google search results", e);
+            List<GoogleSearchLead> leads = new ArrayList<>();
+            for (Future<GoogleSearchLead> task : tasks) {
+                GoogleSearchLead lead = task.get();
+                if (lead != null) leads.add(lead);
+            }
+            log.info("Checked {} websites; found {} leads in {} ms", results.size(), leads.size(),
+                    TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - started));
+            return leads;
+        } catch (RejectedExecutionException e) {
+            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Scraper busy; retry shortly", e);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Scrape interrupted", e);
+        } catch (ExecutionException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Website processing failed", e);
         } finally {
-            driver.quit();
+            tasks.forEach(task -> { if (!task.isDone()) task.cancel(true); });
         }
-
-        return new ArrayList<>(results);
     }
 
-    /**
-     * Visit a website, check for © 2023 or © 2024, and extract phone numbers if found.
-     */
-    private GoogleSearchLead processWebsite(HttpClient httpClient, GoogleSearchResult result) {
+    protected List<GoogleSearchResult> scrapeGoogleSearchResults(String query, int pages) {
+        if (!browserSlot.tryAcquire()) {
+            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Google search busy; retry shortly");
+        }
+        WebDriver driver = null;
         try {
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(result.url()))
-                    .header("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
-                            "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
-                    .header("Accept", "text/html,application/xhtml+xml")
-                    .timeout(Duration.ofSeconds(pageTimeoutSeconds))
-                    .GET()
-                    .build();
-
-            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-
-            if (response.statusCode() != 200) {
-                log.debug("Non-200 response ({}) for {}", response.statusCode(), result.url());
-                return null;
+            WebDriverManager.chromedriver().setup();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new", "--disable-gpu", "--disable-dev-shm-usage",
+                    "--window-size=1920,1080", "--blink-settings=imagesEnabled=false");
+            options.setPageLoadStrategy(org.openqa.selenium.PageLoadStrategy.EAGER);
+            driver = new ChromeDriver(options);
+            driver.manage().timeouts().pageLoadTimeout(timeout);
+            // No implicit waits: a missing heading or consent dialog must not cost four seconds.
+            driver.manage().timeouts().implicitlyWait(Duration.ZERO);
+            Map<String, GoogleSearchResult> results = new LinkedHashMap<>();
+            for (int page = 0; page < pages && results.size() < maxResults; page++) {
+                String url = "https://www.google.com/search?q=" +
+                        URLEncoder.encode(query, StandardCharsets.UTF_8) + "&start=" + page * 10;
+                try {
+                    driver.get(url);
+                } catch (org.openqa.selenium.TimeoutException ignored) {
+                    // An eager navigation may time out even though results are already present.
+                }
+                if (isBlocked(driver.getCurrentUrl(), driver.getPageSource())) {
+                    throw new ResponseStatusException(HttpStatus.BAD_GATEWAY,
+                            "Google blocked the search with a challenge. Retry later.");
+                }
+                var consent = driver.findElements(By.xpath(
+                        "//button[contains(.,'Accept all') or contains(.,'I agree') or @id='L2AGLb']"));
+                if (!consent.isEmpty()) consent.getFirst().click();
+                new WebDriverWait(driver, timeout).until(d ->
+                        isBlocked(d.getCurrentUrl(), d.getPageSource()) || !d.findElements(By.cssSelector("a h3")).isEmpty()
+                                || d.getPageSource().contains("did not match any documents"));
+                String html = driver.getPageSource();
+                if (isBlocked(driver.getCurrentUrl(), html)) {
+                    throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Google search challenge; retry later");
+                }
+                // One DOM snapshot instead of many remote WebDriver calls per link.
+                for (GoogleSearchResult result : parseSearchResults(html)) {
+                    results.putIfAbsent(siteKey(URI.create(result.url())), result);
+                    if (results.size() >= maxResults) break;
+                }
+                if (html.contains("did not match any documents")) break;
             }
-
-            String html = response.body();
-
-            // Check for copyright 2023 or 2024
-            String copyrightYear = findCopyrightYear(html);
-            if (copyrightYear == null) {
-                log.debug("No copyright 2023/2024 found on {}", result.url());
-                return null;
-            }
-
-            // Extract phone numbers
-            List<String> phoneNumbers = extractPhoneNumbers(html);
-
-            if (phoneNumbers.isEmpty()) {
-                log.debug("Copyright {} found but no phone numbers on {}", copyrightYear, result.url());
-                return null;
-            }
-
-            // Extract a clean business name — prefer the title from the search result
-            String businessName = result.title();
-            if (businessName.isBlank()) {
-                Document doc = Jsoup.parse(html);
-                businessName = doc.title();
-            }
-
-            return new GoogleSearchLead(
-                    result.url(),
-                    businessName,
-                    phoneNumbers,
-                    copyrightYear,
-                    result.snippet()
-            );
-
+            return new ArrayList<>(results.values());
+        } catch (ResponseStatusException e) {
+            throw e;
         } catch (Exception e) {
-            log.debug("Failed to process {}: {}", result.url(), e.getMessage());
+            log.warn("Google search failed: {}", e.getMessage());
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY,
+                    "Could not load Google results. Check Chrome installation or retry later.", e);
+        } finally {
+            try { if (driver != null) driver.quit(); }
+            finally { browserSlot.release(); }
+        }
+    }
+
+    static boolean isBlocked(String url, String html) {
+        String lower = html.toLowerCase(Locale.ROOT);
+        return url.contains("/sorry/") || lower.contains("our systems have detected unusual traffic")
+                || lower.contains("id=\"captcha-form\"");
+    }
+
+    List<GoogleSearchResult> parseSearchResults(String html) {
+        Map<String, GoogleSearchResult> results = new LinkedHashMap<>();
+        Document doc = Jsoup.parse(html, "https://www.google.com");
+        for (Element heading : doc.select("a h3")) {
+            Element link = heading.closest("a");
+            try {
+                URI uri = URI.create(link.absUrl("href"));
+                if (uri.getPath().equals("/url") && uri.getRawQuery() != null) {
+                    for (String part : uri.getRawQuery().split("&")) {
+                        if (part.startsWith("q=") || part.startsWith("url=")) {
+                            uri = URI.create(URLDecoder.decode(part.substring(part.indexOf('=') + 1), StandardCharsets.UTF_8));
+                            break;
+                        }
+                    }
+                }
+                if (!isWebsite(uri) || excluded(uri.getHost())) continue;
+                URI clean = new URI(uri.getScheme(), uri.getAuthority(), uri.getPath(), uri.getQuery(), null);
+                Element container = link.closest("div.MjjYud, div.g");
+                results.putIfAbsent(siteKey(clean), new GoogleSearchResult(clean.toString(), heading.text(),
+                        container == null ? "" : container.text()));
+                if (results.size() >= maxResults) break;
+            } catch (Exception ignored) { /* Ignore malformed search links. */ }
+        }
+        return new ArrayList<>(results.values());
+    }
+
+    GoogleSearchLead processWebsite(GoogleSearchResult result) {
+        try {
+            Document doc = fetch(URI.create(result.url()));
+            if (doc == null) return null;
+            String year = findCopyrightYear(doc);
+            // Search results can point to a menu or service page with no footer.
+            URI landing = URI.create(doc.location());
+            if (year == null && landing.getPath() != null && !landing.getPath().matches("/?")) {
+                Document home = fetch(landing.resolve("/"));
+                if (home != null) { doc = home; year = findCopyrightYear(doc); }
+            }
+            if (year == null) return null;
+            List<String> phones = extractPhoneNumbers(doc);
+            if (phones.isEmpty()) {
+                Set<String> contacts = new LinkedHashSet<>();
+                for (Element link : doc.select("a[href]")) {
+                    URI contact;
+                    try { contact = URI.create(link.absUrl("href")); }
+                    catch (IllegalArgumentException e) { continue; }
+                    if (isWebsite(contact) && siteKey(contact).equals(siteKey(URI.create(doc.location())))
+                            && (link.text() + " " + contact.getPath()).toLowerCase(Locale.ROOT).contains("contact")) {
+                        contacts.add(contact.toString().split("#", 2)[0]);
+                    }
+                    if (contacts.size() == 2) break;
+                }
+                for (String contact : contacts) {
+                    Document contactDoc = fetch(URI.create(contact));
+                    if (contactDoc != null) phones = extractPhoneNumbers(contactDoc);
+                    if (!phones.isEmpty()) break;
+                }
+            }
+            if (phones.isEmpty()) return null;
+            return new GoogleSearchLead(doc.location(), result.title().isBlank() ? doc.title() : result.title(),
+                    phones, year, result.snippet());
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            return null;
+        } catch (Exception e) {
+            log.debug("Skipping {}: {}", result.url(), e.getMessage());
             return null;
         }
     }
 
-    /**
-     * Checks the HTML for copyright notices containing 2023 or 2024.
-     * Returns the year string if found, null otherwise.
-     */
-    private String findCopyrightYear(String html) {
-        // Parse with JSoup to get visible text (more accurate than raw HTML regex)
-        Document doc = Jsoup.parse(html);
-        String bodyText = doc.body() != null ? doc.body().text() : "";
-        String fullText = bodyText + " " + html; // Also search raw HTML for &copy; entities
-
-        Matcher matcher = COPYRIGHT_YEAR_PATTERN.matcher(fullText);
-        if (matcher.find()) {
-            return matcher.group(1);
+    private Document fetch(URI uri) throws InterruptedException {
+        if (!isWebsite(uri)) return null;
+        try {
+            HttpRequest request = HttpRequest.newBuilder(uri).timeout(timeout)
+                    .header("User-Agent", USER_AGENT).header("Accept", "text/html,application/xhtml+xml").GET().build();
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            if (response.statusCode() != 200 || !response.headers().firstValue("Content-Type")
+                    .orElse("text/html").toLowerCase(Locale.ROOT).contains("html")) return null;
+            return Jsoup.parse(response.body(), response.uri().toString());
+        } catch (java.io.IOException | IllegalArgumentException e) {
+            log.debug("Fetch failed for {}: {}", uri, e.getMessage());
+            return null;
         }
-
-        // Fallback: check if copyright pattern matches without extracting year
-        Matcher fallback = COPYRIGHT_PATTERN.matcher(fullText);
-        if (fallback.find()) {
-            String match = fallback.group();
-            if (match.contains("23")) return "2023";
-            if (match.contains("24")) return "2024";
-        }
-
-        return null;
     }
 
-    /**
-     * Extracts phone numbers from the HTML using multiple strategies:
-     * 1. Look for tel: href links
-     * 2. Look for phone patterns in visible text
-     * 3. Deduplicate results
-     */
-    private List<String> extractPhoneNumbers(String html) {
-        Set<String> phones = new LinkedHashSet<>();
-
-        Document doc = Jsoup.parse(html);
-
-        // Strategy 1: Extract from tel: links (most reliable)
-        doc.select("a[href^=tel:]").forEach(element -> {
-            String href = element.attr("href");
-            Matcher m = TEL_HREF_PATTERN.matcher(href);
-            if (m.find()) {
-                String phone = normalizePhone(m.group(1));
-                if (isValidPhone(phone)) {
-                    phones.add(phone);
-                }
+    static String findCopyrightYear(Document doc) {
+        // Ignore scripts, comments and template source. Prefer footer notices over article text.
+        String text = doc.select("footer, [role=contentinfo], .footer, #footer, .copyright, #copyright").text();
+        if (text.isBlank()) text = doc.body() == null ? "" : doc.body().text();
+        Matcher matcher = COPYRIGHT.matcher(text);
+        int latest = 0;
+        while (matcher.find()) {
+            int year = Integer.parseInt(matcher.group(1));
+            if (matcher.group(2) != null) {
+                int end = Integer.parseInt(matcher.group(2));
+                int expanded = year / 100 * 100 + end;
+                year = expanded < year ? expanded + 100 : expanded;
             }
-        });
+            latest = Math.max(latest, year);
+        }
+        return latest == 2023 || latest == 2024 ? Integer.toString(latest) : null;
+    }
 
-        // Strategy 2: Look for phone numbers in common page sections
-        // (footer, contact sections, header)
-        String[] selectors = {"footer", ".footer", "#footer", ".contact", "#contact",
-                ".phone", ".tel", "header", ".header", "#header", "body"};
-
-        for (String selector : selectors) {
-            doc.select(selector).forEach(element -> {
-                String text = element.text();
-                Matcher m = PHONE_PATTERN.matcher(text);
-                while (m.find()) {
-                    String phone = normalizePhone(m.group());
-                    if (isValidPhone(phone)) {
-                        phones.add(phone);
+    static List<String> extractPhoneNumbers(Document doc) {
+        Map<String, String> phones = new LinkedHashMap<>();
+        for (Element link : doc.select("a[href]")) {
+            String href = link.attr("href");
+            if (href.regionMatches(true, 0, "tel:", 0, 4)) {
+                addPhone(phones, href.substring(4).split("[;?]", 2)[0]);
+            }
+            try {
+                URI uri = URI.create(link.absUrl("href"));
+                String host = uri.getHost();
+                if ("wa.me".equalsIgnoreCase(host)) addPhone(phones, "+" + uri.getPath().substring(1));
+                if ("api.whatsapp.com".equalsIgnoreCase(host) && uri.getRawQuery() != null) {
+                    for (String part : uri.getRawQuery().split("&")) {
+                        if (part.startsWith("phone=")) addPhone(phones, "+" + URLDecoder.decode(part.substring(6), StandardCharsets.UTF_8));
                     }
                 }
-            });
-
-            if (phones.size() >= 3) break; // Don't collect too many
+            } catch (Exception ignored) { }
         }
-
-        return new ArrayList<>(phones);
+        for (Element data : doc.select("[itemprop=telephone]")) {
+            addPhone(phones, data.hasAttr("content") ? data.attr("content") : data.text());
+        }
+        for (Element script : doc.select("script[type=application/ld+json]")) {
+            Matcher matcher = JSON_PHONE.matcher(script.data());
+            while (matcher.find()) addPhone(phones, matcher.group(1));
+        }
+        if (doc.body() != null) {
+            Matcher matcher = PHONE.matcher(doc.body().text());
+            while (matcher.find()) addPhone(phones, matcher.group());
+        }
+        return phones.values().stream().limit(5).toList();
     }
 
-    /**
-     * Normalizes a phone number by removing extra whitespace.
-     */
-    private String normalizePhone(String phone) {
-        return phone.replaceAll("\\s+", " ").trim();
+    private static void addPhone(Map<String, String> phones, String value) {
+        String digits = value.replaceAll("\\D", "");
+        // Conservative public phone extraction, not a claim that a number is mobile or active.
+        if (digits.length() < 10 || digits.length() > 15 || digits.matches("(\\d)\\1+")) return;
+        phones.putIfAbsent(digits, (value.strip().startsWith("+") ? "+" : "") + digits);
     }
 
-    /**
-     * Basic validation to filter out false positives.
-     */
-    private boolean isValidPhone(String phone) {
-        // Must have at least 7 digits
-        String digitsOnly = phone.replaceAll("[^\\d]", "");
-        if (digitsOnly.length() < 7 || digitsOnly.length() > 15) {
-            return false;
-        }
-        // Filter out numbers that look like years or ZIP codes
-        if (digitsOnly.length() == 4 && digitsOnly.startsWith("20")) {
-            return false;
-        }
-        return true;
+    private static boolean isWebsite(URI uri) {
+        return uri.getHost() != null && uri.getUserInfo() == null
+                && ("https".equalsIgnoreCase(uri.getScheme()) || "http".equalsIgnoreCase(uri.getScheme()));
     }
 
-    private String buildGoogleSearchUrl(String query, int start) {
-        String encoded = query.replace(" ", "+");
-        if (start > 0) {
-            return "https://www.google.com/search?q=" + encoded + "&start=" + start;
-        }
-        return "https://www.google.com/search?q=" + encoded;
+    private static boolean excluded(String host) {
+        String lower = host.toLowerCase(Locale.ROOT);
+        return lower.matches("(?:.*\\.)?google\\.[a-z.]+") || EXCLUDED.stream()
+                .anyMatch(domain -> lower.equals(domain) || lower.endsWith("." + domain));
     }
 
-    private boolean isGoogleUrl(String url) {
-        return url.contains("google.com") || url.contains("google.co")
-                || url.contains("googleapis.com") || url.contains("gstatic.com")
-                || url.contains("youtube.com") || url.contains("webcache.googleusercontent.com");
+    private static String siteKey(URI uri) {
+        return uri.getHost().toLowerCase(Locale.ROOT).replaceFirst("^www\\.", "")
+                + (uri.getPort() < 0 ? "" : ":" + uri.getPort());
     }
 
-    private static final Set<String> DIRECTORY_DOMAINS = Set.of(
-            "yelp.com", "tripadvisor.com", "opentable.com", "doordash.com",
-            "grubhub.com", "ubereats.com", "facebook.com", "instagram.com",
-            "foursquare.com", "eater.com", "theinfatuation.com", "wikipedia.org",
-            "timeout.com", "thrillist.com", "michelin.com", "resy.com",
-            "yellowpages.com", "menupix.com", "seamless.com"
-    );
-
-    private boolean isDirectoryDomain(String url) {
-        String lower = url.toLowerCase();
-        for (String domain : DIRECTORY_DOMAINS) {
-            if (lower.contains(domain)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Internal record to hold raw Google search results before processing.
-     */
-    private record GoogleSearchResult(String url, String title, String snippet) {
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof GoogleSearchResult that)) return false;
-            return url.equals(that.url);
-        }
-
-        @Override
-        public int hashCode() {
-            return url.hashCode();
-        }
-    }
+    protected record GoogleSearchResult(String url, String title, String snippet) { }
 }
