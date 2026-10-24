@@ -1,0 +1,1471 @@
+[
+  {
+    "name": "New Korea Restaurant",
+    "website": "https://newkorearestaurant.com/",
+    "discovery_url": "https://newkorearestaurant.com/",
+    "discovery_source": "Public web search",
+    "final_url": "https://newkorearestaurant.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/218dcaa5805dae13.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "© Copyright 2024",
+        "context": "RESTAURANT 300 CARMEL AVE #D, MARINA, CA 93933 831-384-7171 © Copyright 2024. New Korea Restaurant Privacy Policy"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(831) 384-7171"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://newkorearestaurant.com/#about",
+      "https://newkorearestaurant.com/#contact"
+    ],
+    "status": "matched",
+    "city_label": "Marina, CA",
+    "address": "300 Carmel Ave #D, Marina, CA 93933",
+    "public_phone": "(831) 384-7171",
+    "phone_source": "Official website",
+    "phone_source_url": "https://newkorearestaurant.com/",
+    "source_url": "https://newkorearestaurant.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 1,
+    "original_batch2_id": 1,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Oakland Coffee & Juice Bar",
+    "website": "https://www.oaklandcoffeeandjuicebarfl.com/",
+    "discovery_url": "https://www.oaklandcoffeeandjuicebarfl.com/site-map.php",
+    "discovery_source": "Public web search",
+    "final_url": "https://www.oaklandcoffeeandjuicebarfl.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/1e9f1ea17bf2dc31.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "Copyright © 2024",
+        "context": ":00 AM - 4:00 PM Saturday: 8:00 AM - 2:00 PM Sunday: Closed Copyright © 2024, Oakland Coffee & Juice Bar. All rights reserved. Privacy Policy Terms & Conditions Cookie Settings"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(754) 312-2990"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://www.oaklandcoffeeandjuicebarfl.com/about/"
+    ],
+    "status": "matched",
+    "city_label": "Oakland Park, FL",
+    "address": "201 E Oakland Park Blvd, Oakland Park, FL 33334",
+    "public_phone": "(754) 312-2990",
+    "phone_source": "Official website",
+    "phone_source_url": "https://www.oaklandcoffeeandjuicebarfl.com/",
+    "source_url": "https://www.oaklandcoffeeandjuicebarfl.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 2,
+    "original_batch2_id": 2,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Cafe Mustache",
+    "website": "https://cafemustache.com/",
+    "discovery_url": "https://cafemustache.com/",
+    "discovery_source": "Public web search",
+    "final_url": "https://cafemustache.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/b9c0d9574551fff8.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "© Copyright 2024",
+        "context": "go, IL 60647 • 773 687 9063 • Contact • Booking Est. 2010 • © Copyright 2024 Cafe Mustache LLC"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(773) 687-9063"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://ordering.chownow.com/order/22562/locations"
+    ],
+    "status": "matched",
+    "city_label": "Chicago, IL",
+    "address": "2313 N Milwaukee Ave, Chicago, IL 60647",
+    "public_phone": "(773) 687-9063",
+    "phone_source": "Official website",
+    "phone_source_url": "https://cafemustache.com/",
+    "source_url": "https://cafemustache.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 3,
+    "original_batch2_id": 3,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Illumine Coffee - Downtown",
+    "website": "https://illuminecoffee.com/",
+    "location": "Indianapolis, IN",
+    "address": "11 S Meridian St",
+    "phone": "+1-317-388-5676",
+    "osm_url": "https://www.openstreetmap.org/node/7261887486",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://www.illuminecoffee.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/16ec9c39aca8c2d8.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "© 2024",
+        "context": "itting! follow us Roasted with a smile in Indianapolis, IN. © 2024 illumine coffee co. bottom of page"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://www.illuminecoffee.com/contact-8",
+      "https://www.illuminecoffee.com/about"
+    ],
+    "status": "matched",
+    "public_phone": "(317) 388-5676",
+    "phone_source": "OpenStreetMap public business listing",
+    "phone_source_url": "https://www.openstreetmap.org/node/7261887486",
+    "city_label": "Indianapolis area, IN",
+    "source_url": "https://www.illuminecoffee.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 4,
+    "original_batch2_id": 4,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Shalimar",
+    "website": "https://shalimarindianrestaurants.com",
+    "location": "Indianapolis, IN",
+    "address": "1043 Broad Ripple Avenue Indianapolis IN 46220",
+    "phone": "+1-317-465-1100",
+    "osm_url": "https://www.openstreetmap.org/node/3073387667",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://shalimarindianrestaurants.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/497b61c662e51f15.txt",
+    "copyright_notices": [
+      {
+        "year": 2023,
+        "notice": "© 2023",
+        "context": "enue, Indianapolis, IN, 46220 Phone: 317-465-1100 Order Now © 2023 All rights reserved."
+      }
+    ],
+    "copyrightYear": "2023",
+    "phones_on_page": [
+      "(317) 465-1100"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://shalimarindianrestaurants.com/indian-food-about-us/",
+      "https://shalimarindianrestaurants.com/indian-food-contact-us/",
+      "https://shalimarindianrestaurants.com/indian-food-order-online/restaurants/2445bd18/28622/about-loyalty",
+      "https://shalimarindianrestaurants.com/indian-food-about-us"
+    ],
+    "status": "matched",
+    "public_phone": "(317) 465-1100",
+    "phone_source": "Official website",
+    "phone_source_url": "https://shalimarindianrestaurants.com/",
+    "city_label": "Indianapolis area, IN",
+    "source_url": "https://shalimarindianrestaurants.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 5,
+    "original_batch2_id": 6,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Clucker's",
+    "website": "https://www.cluckers-wings.com",
+    "location": "Louisville, KY",
+    "address": "100 West Riverside Drive Jeffersonville IN 47130",
+    "phone": "+1-812-590-3662",
+    "osm_url": "https://www.openstreetmap.org/way/554300511",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://www.cluckers-wings.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/9ede825ffa686f45.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "©2024",
+        "context": ", INDIANA SHEPHERDSVILLE, KENTUCKY LOUISVILLE, KENTUCKY   ©2024 All Rights Reserved. Powered by MarketGrid HOURS MONDAY: 11:00AM - 10:00PM TUESDAY: 11:00AM - 10:00"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(812) 590-3662",
+      "(812) 225-5025",
+      "(812) 944-8100",
+      "(502) 531-9188",
+      "(502) 308-4000"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://www.cluckers-wings.com/location",
+      "https://www.cluckers-wings.com/about",
+      "https://www.cluckers-wings.com/contact-us",
+      "https://order.toasttab.com/online/locations/3bef3691-e7ef-41b2-a9a6-cc707b2050de#!/"
+    ],
+    "status": "matched",
+    "public_phone": "(812) 590-3662",
+    "phone_source": "Official website",
+    "phone_source_url": "https://www.cluckers-wings.com/",
+    "city_label": "Jeffersonville, IN",
+    "source_url": "https://www.cluckers-wings.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 6,
+    "original_batch2_id": 8,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "El Bracero",
+    "website": "https://elbraceromexicanrestaurantin.com/",
+    "location": "Louisville, KY",
+    "address": "2116 East Spring Street New Albany IN 47150",
+    "phone": "+1-812-641-8611",
+    "osm_url": "https://www.openstreetmap.org/way/1091646571",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://elbraceromexicanrestaurantin.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/e5cee05286d20a1f.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "Copyright El Bracero Mexican Restaurant 2024",
+        "context": " Spring St New Albany, IN 47150 (812) 641-8611 SOCIAL MEDIA Copyright El Bracero Mexican Restaurant 2024"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(812) 641-8611"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://elbraceromexicanrestaurantin.com/#location",
+      "https://elbraceromexicanrestaurantin.com/#contact"
+    ],
+    "status": "matched",
+    "public_phone": "(812) 641-8611",
+    "phone_source": "Official website",
+    "phone_source_url": "https://elbraceromexicanrestaurantin.com/",
+    "city_label": "New Albany, IN",
+    "source_url": "https://elbraceromexicanrestaurantin.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 7,
+    "original_batch2_id": 9,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Fun Boba Tea",
+    "website": "https://www.funbobatea.com/",
+    "location": "Louisville, KY",
+    "address": "1608 Bardstown Road Louisville KY 40205",
+    "phone": "",
+    "osm_url": "https://www.openstreetmap.org/node/3373722598",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://www.funbobatea.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/cbf3789ac328671a.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "Copyright © 2024",
+        "context": "e tea trend continues to explode with Louisville's new shop Copyright © 2024 Proudly Serving the Louisville Area Phone : 502-749-1376 Address : 1608 Bardstown Rd, Louisville, K"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(502) 749-1376"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://www.funbobatea.com/about-4",
+      "https://www.wdrb.com/wdrb-in-the-morning/keith-kaiser-out-and-about/keith-makes-a-strawberry-mango-fruit-tea-at-fun-tea-louisville/video_716543a7-66d4-5ac9-bca6-1cc78b8bf9ff.html",
+      "https://www.wdrb.com/wdrb-in-the-morning/keith-kaiser-out-and-about/keith-learns-about-fun-tea-louisville/video_ae636a1c-0a90-5235-826c-e547db83c50e.html"
+    ],
+    "status": "matched",
+    "public_phone": "(502) 749-1376",
+    "phone_source": "Official website",
+    "phone_source_url": "https://www.funbobatea.com/",
+    "city_label": "Louisville area, KY",
+    "source_url": "https://www.funbobatea.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 8,
+    "original_batch2_id": 10,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Marks Feed Store",
+    "website": "https://marksfeedstore.com/",
+    "location": "Louisville, KY",
+    "address": "6501 Bardstown Road Louisville KY 40291",
+    "phone": "+1-502-442-0808",
+    "osm_url": "https://www.openstreetmap.org/way/329569091",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://marksfeedstore.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/0bacfa1bc5a58bdd.txt",
+    "copyright_notices": [
+      {
+        "year": 2023,
+        "notice": "© 2023",
+        "context": "n our eClub / Careers For 1095c ACA Information, click here © 2023 Mark’s Feed Store"
+      }
+    ],
+    "copyrightYear": "2023",
+    "phones_on_page": [],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://marksfeedstore.com/about-us",
+      "https://marksfeedstore.com/locations"
+    ],
+    "status": "matched",
+    "public_phone": "(502) 442-0808",
+    "phone_source": "OpenStreetMap public business listing",
+    "phone_source_url": "https://www.openstreetmap.org/way/329569091",
+    "city_label": "Louisville area, KY",
+    "source_url": "https://marksfeedstore.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 9,
+    "original_batch2_id": 11,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "The Bep - Boba Teahouse",
+    "website": "https://www.thebeplouisville.com/",
+    "location": "Louisville, KY",
+    "address": "1702 Bardstown Road Louisville KY 40205",
+    "phone": "+15026573252",
+    "osm_url": "https://www.openstreetmap.org/node/3375222880",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://www.thebeplouisville.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/11f7e6cf982d767d.txt",
+    "copyright_notices": [
+      {
+        "year": 2023,
+        "notice": "© 2023",
+        "context": "hursday 11:30AM - 9:00PM Friday - Saturday 11:30AM - 9:30PM © 2023 BY THE BEP LOUISVILLE bottom of page"
+      }
+    ],
+    "copyrightYear": "2023",
+    "phones_on_page": [
+      "(502) 657-3252"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://www.thebeplouisville.com/contact"
+    ],
+    "status": "matched",
+    "public_phone": "(502) 657-3252",
+    "phone_source": "Official website",
+    "phone_source_url": "https://www.thebeplouisville.com/",
+    "city_label": "Louisville area, KY",
+    "source_url": "https://www.thebeplouisville.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 10,
+    "original_batch2_id": 12,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "King Gyros - St. Matthew’s Mall",
+    "website": "https://kinggyrosky.com/",
+    "location": "Louisville, KY",
+    "address": "5000 Shelbyville Rd St Matthews KY 40207",
+    "phone": "+1 502-414-5318",
+    "osm_url": "https://www.openstreetmap.org/node/13671779386",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://kinggyrosky.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/3e706c048959d8b5.txt",
+    "copyright_notices": [
+      {
+        "year": 2023,
+        "notice": "© King Gyros 2023",
+        "context": "KY 40207 Lynnview City 5005 Preston Hwy, Lynnview, KY 40213 © King Gyros 2023. All rights reserved. Design & developed by Idegraphics inc Back To Top"
+      }
+    ],
+    "copyrightYear": "2023",
+    "phones_on_page": [
+      "(502) 414-5318"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://kinggyrosky.com/contact/"
+    ],
+    "status": "matched",
+    "public_phone": "(502) 414-5318",
+    "phone_source": "Official website",
+    "phone_source_url": "https://kinggyrosky.com/",
+    "city_label": "St. Matthews, KY",
+    "source_url": "https://kinggyrosky.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 11,
+    "original_batch2_id": 13,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Bricco Salumeria & Pasta Shop",
+    "website": "https://briccosalumeria.com/",
+    "discovery_url": "https://briccosalumeria.com/",
+    "discovery_source": "Public web search",
+    "final_url": "https://briccosalumeria.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/fcf1f623ed204753.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "Copyright © 2024",
+        "context": "y (behind 241 Hanover Street) Boston, MA 02113 617.248.9629 Copyright © 2024 Bricco"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(617) 248-9629"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://briccosalumeria.com/contact-us/"
+    ],
+    "status": "matched",
+    "city_label": "Boston, MA",
+    "address": "11 Board Alley, Boston, MA 02113",
+    "public_phone": "(617) 248-9629",
+    "phone_source": "Official website",
+    "phone_source_url": "https://briccosalumeria.com/",
+    "source_url": "https://briccosalumeria.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 12,
+    "original_batch2_id": 14,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Pine House Kitchen & Bar",
+    "website": "https://pinehousekitchenandbar.net/",
+    "discovery_url": "https://pinehousekitchenandbar.net/",
+    "discovery_source": "Public web search",
+    "final_url": "https://pinehousekitchenandbar.net/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/b3f6b8aaca7873d7.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "Copyright © 2024",
+        "context": "us today. Recommended Pine House Kitchen & Bar Restaurantji Copyright © 2024 Pine House Kitchen & Bar, all rights reserved. 5800 Dryden Road, Dryden , MI 48428 (810) 375-2357 M"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(810) 375-2357"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://pinehousekitchenandbar.net/contact/"
+    ],
+    "status": "matched",
+    "city_label": "Dryden, MI",
+    "address": "5800 Dryden Rd, Dryden, MI 48428",
+    "public_phone": "(810) 375-2357",
+    "phone_source": "Official website",
+    "phone_source_url": "https://pinehousekitchenandbar.net/",
+    "source_url": "https://pinehousekitchenandbar.net/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 13,
+    "original_batch2_id": 15,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Venezia Italian Family Restaurant",
+    "website": "https://www.veneziaadvance.com/",
+    "discovery_url": "https://www.veneziaadvance.com/childrensmenu.htm",
+    "discovery_source": "Public web search",
+    "final_url": "https://www.veneziaadvance.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/9e6cee03b505dbf0.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "Copyright © 2024",
+        "context": "Venezia Italian Restaurant Copyright © 2024 Venezia Italian Family Restaurant. By . 5273 US Highway 158 Suite 101 Advance, NC. 27006 Phone: (33"
+      },
+      {
+        "year": 2024,
+        "notice": "Copyright © 2024",
+        "context": ", please contact restaurant for more details. Download Menu Copyright © 2024 Venezia Italian Family Restaurant. By . 5273 US Highway 158 Suite 101 Advance, NC. 27006 Hours: Tue"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(336) 940-6787"
+    ],
+    "geo_contexts": [],
+    "contact_links": [],
+    "status": "matched",
+    "city_label": "Advance, NC",
+    "address": "5273 US Hwy 158, Suite 101, Advance, NC 27006",
+    "public_phone": "(336) 940-6787",
+    "phone_source": "Official website",
+    "phone_source_url": "https://www.veneziaadvance.com/",
+    "source_url": "https://www.veneziaadvance.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 14,
+    "original_batch2_id": 16,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Great American Diner",
+    "website": "https://www.greatamericandiner.com/fairport",
+    "location": "Rochester, NY",
+    "address": "650 Whitney Road",
+    "phone": "+1-585-364-0255",
+    "osm_url": "https://www.openstreetmap.org/node/13481845501",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://www.greatamericandiner.com/fairport",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/155786e1b9cdb776.txt",
+    "copyright_notices": [
+      {
+        "year": 2023,
+        "notice": "© 2023",
+        "context": "7am to 2pm 650 Whitney Road Fairport, NY 14450 585 364 0255 © 2023 Great American Diner, All Rights Reserved Change Location Call Order Online about us At Great Ameri"
+      },
+      {
+        "year": 2023,
+        "notice": "© 2023",
+        "context": "s Monday to Friday  7am to 8pm Saturday & Sunday 7am to 2pm © 2023 Great American Diner, All Rights Reserved Share by:"
+      }
+    ],
+    "copyrightYear": "2023",
+    "phones_on_page": [
+      "(585) 364-0255",
+      "(585) 363-5443"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://www.greatamericandiner.com/about",
+      "https://www.greatamericandiner.com/contact-us",
+      "https://www.greatamericandiner.com/apply-for-greece-location"
+    ],
+    "status": "matched",
+    "public_phone": "(585) 364-0255",
+    "phone_source": "Official website",
+    "phone_source_url": "https://www.greatamericandiner.com/fairport",
+    "city_label": "Fairport, NY",
+    "source_url": "https://www.greatamericandiner.com/fairport",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 15,
+    "original_batch2_id": 18,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Angelina's",
+    "website": "https://angelinasonsouth.com/",
+    "location": "Rochester, NY",
+    "address": "689 South Avenue Rochester NY 14620",
+    "phone": "+1 585-435-4039",
+    "osm_url": "https://www.openstreetmap.org/node/13228177906",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://angelinasonsouth.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/28c0e5ef82256f89.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "Copyright © 2024",
+        "context": "Kitchen Hours Open today 05:00 pm – 08:30 pm Get directions Copyright © 2024 Angelina's on South - All Rights Reserved. Powered by"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(585) 435-4039"
+    ],
+    "geo_contexts": [],
+    "contact_links": [],
+    "status": "matched",
+    "public_phone": "(585) 435-4039",
+    "phone_source": "Official website",
+    "phone_source_url": "https://angelinasonsouth.com/",
+    "city_label": "Rochester area, NY",
+    "source_url": "https://angelinasonsouth.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 16,
+    "original_batch2_id": 20,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Juan & Maria's Empanada Stop",
+    "website": "https://juanandmarias.com/",
+    "location": "Rochester, NY",
+    "address": "",
+    "phone": "",
+    "osm_url": "https://www.openstreetmap.org/way/858259776",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://juanandmarias.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/e8df5acee763be36.txt",
+    "copyright_notices": [
+      {
+        "year": 2023,
+        "notice": "© 2023",
+        "context": " Our Story Gallery Home Location Our Menu Our Story Gallery © 2023 Juan & Marias Empanada Stop. All rights reserved. Website by Arca Interactive"
+      }
+    ],
+    "copyrightYear": "2023",
+    "phones_on_page": [
+      "(585) 500-9319"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://juanandmarias.com/location/"
+    ],
+    "status": "matched",
+    "public_phone": "(585) 500-9319",
+    "phone_source": "Official website",
+    "phone_source_url": "https://juanandmarias.com/",
+    "city_label": "Rochester area, NY",
+    "source_url": "https://juanandmarias.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 17,
+    "original_batch2_id": 21,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Lovin Cup",
+    "website": "https://lovincup.com/",
+    "location": "Rochester, NY",
+    "address": "Rochester NY 14623",
+    "phone": "",
+    "osm_url": "https://www.openstreetmap.org/node/499640742",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://lovincup.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/ab4a100c7c2a91cd.txt",
+    "copyright_notices": [
+      {
+        "year": 2023,
+        "notice": "© 2023",
+        "context": "Program Sign-up for the Lovin’ Cup Rewards Program lovincup © 2023. All Rights Reserved Designed and Developed by Noticestry, LLC Menu Live Music Your Event Catering "
+      }
+    ],
+    "copyrightYear": "2023",
+    "phones_on_page": [
+      "(585) 292-9940"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://lovincup.com/about-us/",
+      "https://lovincup.com/contact-us/"
+    ],
+    "status": "matched",
+    "public_phone": "(585) 292-9940",
+    "phone_source": "Official website",
+    "phone_source_url": "https://lovincup.com/",
+    "city_label": "Rochester area, NY",
+    "source_url": "https://lovincup.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 18,
+    "original_batch2_id": 23,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Vault Cafe & Cabaret",
+    "website": "https://www.vaultcafeandcabaret.com/",
+    "location": "Rochester, NY",
+    "address": "1322 Culver Road Rochester NY 14609",
+    "phone": "+1-585-270-8042",
+    "osm_url": "https://www.openstreetmap.org/node/8785778527",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://www.vaultcafeandcabaret.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/6443e1064853acd6.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "© 2024",
+        "context": "Email * Subscribe I want to subscribe to your mailing list. © 2024 by The VAULT cafe and cabaret created by The Jahara Duval Agnecy bottom of page"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(585) 270-8042"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://www.vaultcafeandcabaret.com/contact"
+    ],
+    "status": "matched",
+    "public_phone": "(585) 270-8042",
+    "phone_source": "Official website",
+    "phone_source_url": "https://www.vaultcafeandcabaret.com/",
+    "city_label": "Rochester area, NY",
+    "source_url": "https://www.vaultcafeandcabaret.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 19,
+    "original_batch2_id": 24,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Abundance Culinary",
+    "website": "https://a-bun.com/",
+    "location": "Cleveland, OH",
+    "address": "1975 Lee Road   44118",
+    "phone": "+1-216-785-9959",
+    "osm_url": "https://www.openstreetmap.org/node/10733219705",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://a-bun.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/5d5a8d97ac27d6c7.txt",
+    "copyright_notices": [
+      {
+        "year": 2023,
+        "notice": "Copyright © 2023",
+        "context": " Up Follow us on Instagram Dumpling Club Abundance Culinary Copyright © 2023 Powered by This website uses cookies. We use cookies to analyze website traffic and optimize your w"
+      }
+    ],
+    "copyrightYear": "2023",
+    "phones_on_page": [
+      "(216) 785-9959"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://a-bun.com/locate-%26-contact-us"
+    ],
+    "status": "matched",
+    "public_phone": "(216) 785-9959",
+    "phone_source": "Official website",
+    "phone_source_url": "https://a-bun.com/",
+    "city_label": "Cleveland Heights, OH",
+    "source_url": "https://a-bun.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 20,
+    "original_batch2_id": 25,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Batuqui",
+    "website": "https://www.batuquicleveland.com/",
+    "location": "Cleveland, OH",
+    "address": "12624 Larchmere Boulevard Cleveland OH 44120",
+    "phone": "+1 216 801 0227",
+    "osm_url": "https://www.openstreetmap.org/node/13812204009",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://www.batuquicleveland.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/27d4ef6f123505ae.txt",
+    "copyright_notices": [
+      {
+        "year": 2023,
+        "notice": "© 2023",
+        "context": " 8:30pm FRI - SAT 5pm to 9:30pm SU 3pm - 8:30pm Back To Top © 2023 Batuqui The Flavor of Brasil 12624 Larchmere Blvd., Cleveland, Ohio 44120  |  (216) 801-0227  |  ba"
+      }
+    ],
+    "copyrightYear": "2023",
+    "phones_on_page": [
+      "(216) 801-0227",
+      "(440) 600-2122"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://www.batuquicleveland.com/#about-us-section"
+    ],
+    "status": "matched",
+    "public_phone": "(216) 801-0227",
+    "phone_source": "Official website",
+    "phone_source_url": "https://www.batuquicleveland.com/",
+    "city_label": "Cleveland area, OH",
+    "source_url": "https://www.batuquicleveland.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 21,
+    "original_batch2_id": 26,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Reef Al Yemen",
+    "website": "https://reefalyemenrestraunt.com/",
+    "location": "Cleveland, OH",
+    "address": "3553 West 117th Street Cleveland OH",
+    "phone": "",
+    "osm_url": "https://www.openstreetmap.org/way/931551333",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://reefalyemenrestraunt.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/b672409b5c9de02f.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "Copyright © 2024",
+        "context": "ليمن 3553 W 117th St, Cleveland, OH 44111, USA +12164155769 Copyright © 2024 Reef Al yemen مطعم ريف اليمن - All Rights Reserved. Powered by GoDaddy This website uses cookies. W"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(216) 415-5769"
+    ],
+    "geo_contexts": [],
+    "contact_links": [],
+    "status": "matched",
+    "public_phone": "(216) 415-5769",
+    "phone_source": "Official website",
+    "phone_source_url": "https://reefalyemenrestraunt.com/",
+    "city_label": "Cleveland area, OH",
+    "source_url": "https://reefalyemenrestraunt.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 22,
+    "original_batch2_id": 28,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Lakewood Truck Park",
+    "website": "https://www.lakewoodtruckpark.com/",
+    "location": "Cleveland, OH",
+    "address": "16900 Detroit Avenue Lakewood",
+    "phone": "",
+    "osm_url": "https://www.openstreetmap.org/way/1039229150",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://www.lakewoodtruckpark.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/4125cc7fb203b9a0.txt",
+    "copyright_notices": [
+      {
+        "year": 2023,
+        "notice": "© 2023",
+        "context": "m - 1:00am 16900 Detroit Avenue Lakewood, OH (216) 712-4032 © 2023 Lakewood Truck Park"
+      }
+    ],
+    "copyrightYear": "2023",
+    "phones_on_page": [
+      "(216) 712-4032"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://www.lakewoodtruckpark.com/contact"
+    ],
+    "status": "matched",
+    "public_phone": "(216) 712-4032",
+    "phone_source": "Official website",
+    "phone_source_url": "https://www.lakewoodtruckpark.com/",
+    "city_label": "Lakewood, OH",
+    "source_url": "https://www.lakewoodtruckpark.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 23,
+    "original_batch2_id": 31,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Bearden's Restaurant",
+    "website": "https://beardens.com/",
+    "location": "Cleveland, OH",
+    "address": "19985 Lake Road Rocky River OH 44116",
+    "phone": "",
+    "osm_url": "https://www.openstreetmap.org/way/788251505",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://beardens.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/d7d58d24c0d37a44.txt",
+    "copyright_notices": [
+      {
+        "year": 2023,
+        "notice": "Copyright © 2023",
+        "context": "erms of Service apply. Submit Application Featured Products Copyright © 2023 Beardens - All Rights Reserved. Powered by Privacy Policy Terms and Conditions This website uses co"
+      }
+    ],
+    "copyrightYear": "2023",
+    "phones_on_page": [
+      "(440) 331-7850"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://beardens.com/hours-%26-contact-info"
+    ],
+    "status": "matched",
+    "public_phone": "(440) 331-7850",
+    "phone_source": "Official website",
+    "phone_source_url": "https://beardens.com/",
+    "city_label": "Rocky River, OH",
+    "source_url": "https://beardens.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 24,
+    "original_batch2_id": 32,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "56 Social",
+    "website": "https://www.56social.com/",
+    "location": "Cleveland, OH",
+    "address": "3245 Warrensville Center Road Shaker Heights OH 44122",
+    "phone": "",
+    "osm_url": "https://www.openstreetmap.org/node/1226816346",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://www.56social.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/0de876a0e6218717.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "© 2024",
+        "context": " our restaurant group Rewards | Gift Card Balance | Careers © 2024 56 Social by Jay Leitson & Izzy Schachner | Continuing the Legacy Since 1995"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(216) 283-3663",
+      "(216) 464-3090"
+    ],
+    "geo_contexts": [],
+    "contact_links": [],
+    "status": "matched",
+    "public_phone": "(216) 283-3663",
+    "phone_source": "Official website",
+    "phone_source_url": "https://www.56social.com/",
+    "city_label": "Shaker Heights, OH",
+    "source_url": "https://www.56social.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 25,
+    "original_batch2_id": 33,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Mia Madre Trattoria",
+    "website": "https://miamadretrattoria.com/",
+    "location": "Pittsburgh, PA",
+    "address": "649 California Avenue Avalon PA 15202",
+    "phone": "+14127666662",
+    "osm_url": "https://www.openstreetmap.org/node/4289337993",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://miamadretrattoria.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/5e4bc52bcf9cfada.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "©2024",
+        "context": "roduct availability and rising cost - menu pricing may vary ©2024 Mia Madre TrattoriA | 649 California Ave., Pittsburgh, Pa 15202 | 412-766-6662 | Info@MiaMadreTratt"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(412) 766-6662"
+    ],
+    "geo_contexts": [],
+    "contact_links": [],
+    "status": "matched",
+    "public_phone": "(412) 766-6662",
+    "phone_source": "Official website",
+    "phone_source_url": "https://miamadretrattoria.com/",
+    "city_label": "Avalon, PA",
+    "source_url": "https://miamadretrattoria.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 26,
+    "original_batch2_id": 35,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Angie’s Diner & Lounge",
+    "website": "https://angiesdinerandlounge.com/",
+    "discovery_url": "https://angiesdinerandlounge.com/",
+    "discovery_source": "Public web search",
+    "final_url": "https://angiesdinerandlounge.com/",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/d304c2f2e8f4c0d1.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "Copyright © 2024",
+        "context": "on Contact Employment Location Map & Directions Menus Menus Copyright © 2024. All Rights Reserved. Angie's Diner & Lounge, 1360 Eisenhower Blvd, Harrisburg, PA 17111 Designed b"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(717) 939-0417"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://angiesdinerandlounge.com/contact-us/",
+      "https://angiesdinerandlounge.com/contact-us/map-and-directions/",
+      "https://angiesdinerandlounge.com/contact-us/employment/",
+      "http://angiesdinerandlounge.com/contact-us/",
+      "http://angiesdinerandlounge.com/contact-us/employment/",
+      "http://angiesdinerandlounge.com/contact-us/map-and-directions/"
+    ],
+    "status": "matched",
+    "city_label": "Harrisburg, PA",
+    "address": "1360 Eisenhower Blvd, Harrisburg, PA 17111",
+    "public_phone": "(717) 939-0417",
+    "phone_source": "Official website",
+    "phone_source_url": "https://angiesdinerandlounge.com/",
+    "source_url": "https://angiesdinerandlounge.com/",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 27,
+    "original_batch2_id": 36,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "Commonplace Coffee",
+    "website": "https://commonplacecoffee.com/squirrel-hill/",
+    "location": "Pittsburgh, PA",
+    "address": "5827 Forbes Avenue Pittsburgh PA 15217",
+    "phone": "+14124220404",
+    "osm_url": "https://www.openstreetmap.org/node/541644815",
+    "discovery_source": "OpenStreetMap public business tags",
+    "final_url": "https://commonplacecoffee.com/pages/squirrel-hill",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-redesign-leads-batch2-2026-10-21/evidence/4bceaea2d6ec674c.txt",
+    "copyright_notices": [
+      {
+        "year": 2024,
+        "notice": "Copyright © 2024",
+        "context": "ents Return Policy Press Room CONNECT 412-945-0653 Email Us Copyright © 2024 Commonplace Coffee. All Rights Reserved. Privacy Policy . Terms of Service . Choosing a selection r"
+      }
+    ],
+    "copyrightYear": "2024",
+    "phones_on_page": [
+      "(412) 422-0404",
+      "(412) 945-0653"
+    ],
+    "geo_contexts": [],
+    "contact_links": [
+      "https://commonplacecoffee.com/pages/locations",
+      "https://commonplacecoffee.com/pages/about-us",
+      "https://commonplacecoffee.com/pages/contact",
+      "https://1d5521-5d.myshopify.com/pages/locations",
+      "https://1d5521-5d.myshopify.com/pages/contact",
+      "https://1d5521-5d.myshopify.com/pages/about-us"
+    ],
+    "status": "matched",
+    "public_phone": "(412) 422-0404",
+    "phone_source": "Official website",
+    "phone_source_url": "https://commonplacecoffee.com/pages/squirrel-hill",
+    "city_label": "Pittsburgh area, PA",
+    "source_url": "https://commonplacecoffee.com/pages/squirrel-hill",
+    "checked_date": "2026-10-21",
+    "selection_basis": "Copyright notice ending in 2023 or 2024; visual appearance not screened.",
+    "id": 28,
+    "original_batch2_id": 40,
+    "list_origin": "Previous selected 28"
+  },
+  {
+    "name": "The Continental",
+    "website": "http://www.continental-bar.com/",
+    "source_url": "https://continentaldsm.wixsite.com/the-continental",
+    "location": "Des Moines, IA",
+    "address": "407 East 5th Street Des Moines IA 50309",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(515) 528-2300",
+    "phone_source_url": "https://continentaldsm.wixsite.com/the-continental",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/fdecab8cc05a4a6e.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/way/156269335",
+    "id": 29,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Des Moines, IA"
+  },
+  {
+    "name": "Either/Or",
+    "website": "https://eitherordsm.com/",
+    "source_url": "https://eitherordsm.com/",
+    "location": "Des Moines, IA",
+    "address": "6222 Grand Avenue Des Moines  50312",
+    "copyrightYear": "2023",
+    "copyright_notice": "Copyright © 2023",
+    "public_phone": "(515) 214-1831",
+    "phone_source_url": "https://eitherordsm.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/7599320d94abcf16.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/way/205962453",
+    "id": 30,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Des Moines, IA"
+  },
+  {
+    "name": "PH Coffee",
+    "website": "https://www.ph.coffee",
+    "source_url": "https://www.ph.coffee/",
+    "location": "Kansas City, MO",
+    "address": "2200 Lexington Avenue Kansas City MO 64124",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(816) 723-1243",
+    "phone_source_url": "https://www.ph.coffee/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/0b46e7a3450454fa.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/7943563468",
+    "id": 31,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Kansas City, MO"
+  },
+  {
+    "name": "Holy Grounds Coffee & Book Shoppe",
+    "website": "https://holygrounds.life/",
+    "source_url": "https://holygrounds.life/",
+    "location": "Liberty, MO",
+    "address": "342 North Water Street Liberty MO 64068",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(816) 200-0000",
+    "phone_source_url": "https://holygrounds.life/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/a68aa1f98e08ae2e.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/13522411980",
+    "id": 32,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Liberty, MO"
+  },
+  {
+    "name": "Hacienda Vieja",
+    "website": "https://www.haciendaviejakc.com/",
+    "source_url": "https://www.haciendaviejakc.com/",
+    "location": "Independence, MO",
+    "address": "3681 South Noland Road Independence MO 64055",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(816) 833-8800",
+    "phone_source_url": "https://www.haciendaviejakc.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/46186f8c9759cd29.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/way/195652187",
+    "id": 33,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Independence, MO"
+  },
+  {
+    "name": "Tacos El Viejon",
+    "website": "https://tacoelviejon.com/",
+    "source_url": "https://www.tacoelviejon.com/",
+    "location": "Olathe, KS",
+    "address": "800 South 7th Street Trafficway Kansas City KS 66204",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(913) 712-8089",
+    "phone_source_url": "https://www.tacoelviejon.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/df392c6e70a589f3.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/way/513038419",
+    "id": 34,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Olathe, KS"
+  },
+  {
+    "name": "Tacos del Rancho",
+    "website": "https://www.tacosdelrancho.com/",
+    "source_url": "https://www.tacosdelrancho.com/",
+    "location": "Tucson, AZ",
+    "address": "6421 North Oracle Road Tucson AZ 85704",
+    "copyrightYear": "2023",
+    "copyright_notice": "©2023",
+    "public_phone": "(520) 789-7397",
+    "phone_source_url": "https://www.tacosdelrancho.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/77105fb44e1b2614.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/11696570972",
+    "id": 35,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Tucson, AZ"
+  },
+  {
+    "name": "Tandem American Eatery",
+    "website": "https://tandemaz.com/",
+    "source_url": "https://tandemaz.com/",
+    "location": "Tucson, AZ",
+    "address": "8864 East Tanque Verde Road Tucson AZ",
+    "copyrightYear": "2023",
+    "copyright_notice": "Copyright © 2023",
+    "public_phone": "(520) 526-2501",
+    "phone_source_url": "https://tandemaz.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/d3f67d894f775dc3.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/12439682119",
+    "id": 36,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Tucson, AZ"
+  },
+  {
+    "name": "Viva Mexican Food",
+    "website": "https://www.vivamexicanfood.com/",
+    "source_url": "https://www.vivamexicanfood.com/",
+    "location": "Tucson, AZ",
+    "address": "1065 South Craycroft Road   85711",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(520) 332-2340",
+    "phone_source_url": "https://www.vivamexicanfood.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/4228419376508f92.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/way/793103744",
+    "id": 37,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Tucson, AZ"
+  },
+  {
+    "name": "Bridges Nepali Cuisine",
+    "website": "https://www.bridgesnepalicuisine.com/",
+    "source_url": "https://www.bridgesnepalicuisine.com/",
+    "location": "Cincinnati area, OH",
+    "address": "4165 Hamilton Avenue Cincinnati OH 45223",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(513) 374-9354",
+    "phone_source_url": "https://www.bridgesnepalicuisine.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/cef9421a425f93dc.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/2711121173",
+    "id": 38,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Cincinnati area, OH"
+  },
+  {
+    "name": "Pleasant Ridge Chili",
+    "website": "https://pleasantridgechili.com/",
+    "source_url": "https://pleasantridgechili.com/",
+    "location": "Cincinnati area, OH",
+    "address": "6032 Montgomery Road Cincinnati OH 45213",
+    "copyrightYear": "2023",
+    "copyright_notice": "Copyright © 2023",
+    "public_phone": "(513) 531-2365",
+    "phone_source_url": "https://pleasantridgechili.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/cb96de523d6dd569.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/5449039478",
+    "id": 39,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Cincinnati area, OH"
+  },
+  {
+    "name": "Coppin’s Restaurant & Bar",
+    "website": "https://hotelcovington.com/dining/coppins/",
+    "source_url": "https://hotelcovington.com/home/coppins/",
+    "location": "Covington, KY",
+    "address": "638 Madison Avenue Covington KY 41011",
+    "copyrightYear": "2023",
+    "copyright_notice": "©2023",
+    "public_phone": "(859) 905-6600",
+    "phone_source_url": "https://hotelcovington.com/home/coppins/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/85064142abbe5bfa.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/10724490454",
+    "id": 40,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Covington, KY"
+  },
+  {
+    "name": "Parkside",
+    "website": "https://www.parksidecincy.com/",
+    "source_url": "https://www.parksidecincy.com/",
+    "location": "Cincinnati area, OH",
+    "address": "2637 Erie Avenue Cincinnati OH 45208",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(513) 800-6419",
+    "phone_source_url": "https://www.parksidecincy.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/1e36deeddc395864.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/13136858801",
+    "id": 41,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Cincinnati area, OH"
+  },
+  {
+    "name": "Brick House Bar & Grill",
+    "website": "https://www.brickhousecincy.com/",
+    "source_url": "https://www.brickhousecincy.com/",
+    "location": "Sharonville, OH",
+    "address": "11961 Lebanon Road Sharonville OH 45241-1701",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(513) 429-5934",
+    "phone_source_url": "https://www.brickhousecincy.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/1531d24989ddda1f.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/14068548253",
+    "id": 42,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Sharonville, OH"
+  },
+  {
+    "name": "Firehouse Grill",
+    "website": "https://www.firehousegrillcincinnati.com/",
+    "source_url": "https://www.firehousegrillcincinnati.com/",
+    "location": "Cincinnati area, OH",
+    "address": "4785 Lake Forest Drive Cincinnati OH 45242",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(513) 733-3473",
+    "phone_source_url": "https://www.firehousegrillcincinnati.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/2bd0f71438e28ad2.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/way/41934633",
+    "id": 43,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Cincinnati area, OH"
+  },
+  {
+    "name": "Wario’s Beef and Pork",
+    "website": "https://wariosbeefandpork614.com",
+    "source_url": "https://www.wariosbeefandpork614.com/",
+    "location": "Columbus, OH",
+    "address": "4219 North High Street Columbus OH 43214",
+    "copyrightYear": "2023",
+    "copyright_notice": "©2023",
+    "public_phone": "(614) 674-6200",
+    "phone_source_url": "https://www.wariosbeefandpork614.com/locations",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/03b2bf14cb5dcb4b.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/11649406069",
+    "id": 44,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Columbus, OH"
+  },
+  {
+    "name": "Hiro Ramen & Tea",
+    "website": "https://www.hiroramentea.com/",
+    "source_url": "https://www.hiroramentea.com/",
+    "location": "Columbus area, OH",
+    "address": "",
+    "copyrightYear": "2023",
+    "copyright_notice": "©2023",
+    "public_phone": "(614) 972-6089",
+    "phone_source_url": "https://www.hiroramentea.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/1c332ff2f5d8f036.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/12605998803",
+    "id": 45,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Columbus area, OH"
+  },
+  {
+    "name": "Paris Banh Mi",
+    "website": "https://www.parisbanhmicolumbus.com/",
+    "source_url": "https://www.parisbanhmicolumbus.com/",
+    "location": "Dublin, OH",
+    "address": "6195 Sawmill Road   43017",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(614) 768-7777",
+    "phone_source_url": "https://www.parisbanhmicolumbus.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/a0f531d46a4a2102.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/13958806701",
+    "id": 46,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Dublin, OH"
+  },
+  {
+    "name": "Romeo’s Pizza",
+    "website": "https://locations.romeospizza.com/gahanna/",
+    "source_url": "https://locations.romeospizza.com/gahanna/",
+    "location": "Gahanna, OH",
+    "address": "1161 N Hamilton Rd Gahanna  43230",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(614) 470-6000",
+    "phone_source_url": "https://locations.romeospizza.com/gahanna/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/269b9a4c22275a08.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/way/1523077036",
+    "id": 47,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Gahanna, OH"
+  },
+  {
+    "name": "The Omelette Shoppe",
+    "website": "https://www.omeletteshoppe.com/",
+    "source_url": "https://www.omeletteshoppe.com/",
+    "location": "Grand Rapids, MI",
+    "address": "545 Michigan Street Northeast Grand Rapids MI 49503",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(616) 726-5800",
+    "phone_source_url": "https://www.omeletteshoppe.com/contact",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/a1d52450fa8d73a3.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/9024883517",
+    "id": 48,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Grand Rapids, MI"
+  },
+  {
+    "name": "The Oyster Bar",
+    "website": "https://www.fwoysterbar.com",
+    "source_url": "https://www.fwoysterbar.com/",
+    "location": "Fort Wayne area, IN",
+    "address": "1830 South Calhoun Street;South Calhoun St Fort Wayne IN 46802",
+    "copyrightYear": "2023",
+    "copyright_notice": "copyright © 2023",
+    "public_phone": "(260) 744-9490",
+    "phone_source_url": "https://www.fwoysterbar.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/2decba5389329fae.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/way/1032665664",
+    "id": 49,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Fort Wayne area, IN"
+  },
+  {
+    "name": "Kefi",
+    "website": "https://kefiknox.com/",
+    "source_url": "https://kefiknox.com/",
+    "location": "Knoxville, TN",
+    "address": "120 East Jackson Avenue   37915",
+    "copyrightYear": "2023",
+    "copyright_notice": "© 2023",
+    "public_phone": "(865) 474-1492",
+    "phone_source_url": "https://kefiknox.com/",
+    "phone_type": "Public business number; mobile status not verified",
+    "checked_date": "2026-10-22",
+    "evidence_file": "/Users/Krish/Documents/Playground/usa-2023-only-batch3-2026-10-22/evidence/d25f5da715c3a8ee.txt",
+    "project_verification": "GoogleSearchScraperService.findCopyrightYear on freshly fetched official website HTML",
+    "osm_url": "https://www.openstreetmap.org/node/9579226603",
+    "id": 50,
+    "list_origin": "Copyright 2023 batch, Urban removed",
+    "city_label": "Knoxville, TN"
+  }
+]

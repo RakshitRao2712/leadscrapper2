@@ -96,7 +96,7 @@ def check_website(url):
     if len(year) == 2:
         year = "20" + year
 
-    # Extract phone numbers from website
+    # Extract phone numbers from websi
     phones = []
     seen = set()
     for tel in TEL_PATTERN.findall(html):
